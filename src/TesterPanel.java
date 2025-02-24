@@ -27,6 +27,9 @@ public class TesterPanel extends JPanel implements Runnable {
     public final int FRAMERATE = 1;
 
     public boolean easyMode;
+    public boolean flashMode;
+
+    private Scanner sc;
 
     Set<GreekLifeStructure> greekLifeStructures;
 
@@ -35,20 +38,23 @@ public class TesterPanel extends JPanel implements Runnable {
         this.setBackground(Color.BLACK);
         this.setPreferredSize(new Dimension(TESTER_DIMENSIONS));
 
-        Scanner sc = new Scanner(new File("src\\UWFratSorDatabase.txt"));
+        Scanner scFile = new Scanner(new File("src\\UWFratSorDatabase.txt"));
         greekLifeStructures = new HashSet<>();
         
-        Scanner sc2 = new Scanner(System.in);
-        System.out.println("This is a game to test your knowledge of the Greek Life\nhouses at the University of Washington. You will be\nshown a house (yellow) and you must guess the name of the house.\nIf you guess correctly, the house will turn blue (fraternity) or\nred (sorority). If you guess incorrectly, the house will\nturn black. You will have three attempts to guess the\nhouse. If you guess incorrectly three times, the correct\nanswer will be displayed and the house will turn black.\n\nWould you like to play in easy mode? (y/n)");
-        String response = sc2.nextLine();
+        sc = new Scanner(System.in);
+        System.out.println("This is a game to test your knowledge of the Greek Life\nhouses at the University of Washington. You will be\nshown a house (yellow) and you must guess the name of the house.\nIf you guess correctly, the house will turn blue (fraternity) or\nred (sorority). If you guess incorrectly, the house will\nturn black. You will have three attempts to guess the\nhouse. If you guess incorrectly three times, the correct\nanswer will be displayed and the house will turn black.\n\nWould you like to play in easy mode? (y/n/flash)");
+        String response = sc.nextLine();
         if(response.toLowerCase().equals("y")) {
             easyMode = true;
+        } else if(response.toLowerCase().equals("flash")) {
+            easyMode = true;
+            flashMode = true;
         } else {
             easyMode = false;
         }
 
-        while(sc.hasNextLine()) {
-            String line = sc.nextLine();
+        while(scFile.hasNextLine()) {
+            String line = scFile.nextLine();
             greekLifeStructures.add(new GreekLifeStructure(line));
         }
         backgroundImage = ImageIO.read(new File("src\\UWFratSorDatabase.png"));
@@ -60,6 +66,13 @@ public class TesterPanel extends JPanel implements Runnable {
         image = createImage(getWidth(), getHeight());
         graphics = image.getGraphics();
         graphics.drawImage(backgroundImage, 0,0, this);
+        if(flashMode) {
+            if(easyMode) {
+                easyMode = false;
+            } else {
+                easyMode = true;
+            }
+        }
         for(GreekLifeStructure greekLifeStructure : greekLifeStructures) {
             if(!greekLifeStructure.hasAnotherAttempt){
                 graphics.setColor(Color.BLACK);
@@ -113,7 +126,6 @@ public class TesterPanel extends JPanel implements Runnable {
                     numCorrect--;
                 }
             }
-            Scanner sc = new Scanner(System.in);
             if(numCorrect == size) {
                 System.out.println();
                 System.out.println("All houses have been guessed correctly");
@@ -157,7 +169,6 @@ public class TesterPanel extends JPanel implements Runnable {
     public void question(GreekLifeStructure greekLifeStructure) {
         System.out.println("What is the name of this house?");
         boolean correct = false;
-        Scanner sc = new Scanner(System.in);
         int attempts = 0;
         while(!correct) {
             String answer = sc.nextLine();
@@ -184,6 +195,7 @@ public class TesterPanel extends JPanel implements Runnable {
         double nsPerFrame = 1000000000 / FRAMERATE;
         double frameCounter = 0;
         
+        GreekLifeStructure questionHouse = null;
         while(true) {
             long now = System.nanoTime();
             double deltaTime = (now - lastTime);
@@ -194,10 +206,16 @@ public class TesterPanel extends JPanel implements Runnable {
             if(frameCounter >= 1) {
                 System.out.println();
                 System.out.println("--------------------");
-                GreekLifeStructure questionHouse = nextHouse();
+                if(flashMode) {
+                    sc.nextLine();
+                } else {
+                    questionHouse = nextHouse();
+                }
                 repaint();
-                question(questionHouse);
-                questionHouse.isActive = false;
+                if(!flashMode) {
+                    question(questionHouse);
+                    questionHouse.isActive = false;
+                }
                 frameCounter--;
             
             }
