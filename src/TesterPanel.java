@@ -24,7 +24,7 @@ public class TesterPanel extends JPanel implements Runnable {
     public final static int TESTER_HEIGHT = 731;
     public final Dimension TESTER_DIMENSIONS = new Dimension(TESTER_WIDTH, TESTER_HEIGHT);
 
-    public final int FRAMERATE = 1;
+    public int FRAMERATE = 1;
 
     public boolean easyMode;
     public boolean flashMode;
@@ -49,6 +49,7 @@ public class TesterPanel extends JPanel implements Runnable {
         } else if(response.toLowerCase().equals("flash")) {
             easyMode = true;
             flashMode = true;
+            FRAMERATE = 10;
         } else {
             easyMode = false;
         }
