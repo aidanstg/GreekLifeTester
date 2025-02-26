@@ -1,5 +1,5 @@
 167,186,29,16,1,Alpha Xi Delta,A Xi D,alpha xi delta,a xi d,AZD,azd
-162,401,38,29,0,Phi Kappa Sigma,Phi Kap,phi kappa sigma,phi kap
+162,401,38,29,0,Phi Kappa Sigma,Phi Kap,phi kappa sigma,phi kap,Phi Kappa,phi kappa
 162,432,30,24,0,Sigma Nu,SNu,sigma nu,snu
 160,488,35,21,0,Beta Theta Pi,Betas,beta theta pi,betas
 163,530,33,30,1,Alpha Chi Omega,A Chi O,alpha chi omega,a chi o,AChiO,achio
@@ -8,7 +8,7 @@
 160,651,37,53,0,Phi Gamma Delta,FIJI,Phi gamma delta,fiji
 250,672,19,25,0,Sigma Alpha Epsilon,SAE,sigma alpha epsilon,sae
 245,602,28,30,1,Kappa Delta,KD,kappa delta,kd
-249,575,24,25,0,Pi Kappa Phi,Pi Kapps,pi kappa phi,pi kapps
+249,575,24,25,0,Pi Kappa Phi,Pi Kapps,pi kappa phi,pi kapps,pi kappa,Pi Kappa
 246,543,27,30,1,Phi Mu,Phi Mu,phi mu,phi mu
 246,501,27,37,1,Pi Beta Phi,Pi Phi,pi beta phi,pi phi
 290,490,20,46,1,Chi Omega,Chi O,chi omega,chi o,chio,ChiO
@@ -35,7 +35,7 @@
 618,647,29,38,1,Alpha Gamma Delta,AGD,alpha gamma delta,agd
 629,596,43,33,0,Tau Kappa Epsilon,TKE,tau kappa epsilon,tke
 621,485,44,33,0,Phi Delta Theta,Phi Delt,phi delta theta,phi delt
-654,429,18,25,0,Alpha Delta Phi,Alpha Delt,alpha delta phi,alpha delt
+654,429,18,25,0,Alpha Delta Phi,Alpha Delt,alpha delta phi,alpha delt,alpha delta,Alpha Delta
 674,408,31,42,0,Phi Kappa Psi,Phi Psi,phi kappa psi,phi psi
 714,600,28,35,0,Chi Psi,Chi Psi,chi psi,chi psi
 691,657,46,40,1,Sigma Kappa,SK,sigma kappa,sk
