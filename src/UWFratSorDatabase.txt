@@ -25,7 +25,7 @@
 457,678,34,26,0,Sigma Phi Epsilon,Sig Ep,sigma phi epsilon,sig ep
 458,641,21,36,0,Delta Upsilon,Delta U,delta upsilon,delta u,DeltaU,deltau
 460,603,34,35,0,Delta Tau Delta,Delts,delta tau delta,delts
-461,572,32,27,0,Theta Delta Chi,Theta Delts,theta delta chi,theta delts
+461,572,32,27,0,Theta Delta Chi,Theta Delts,theta delta chi,theta delts,theta delta,Theta Delta
 464,495,20,32,0,Alpha Sigma Phi,Alpha Sig,alpha sigma phi,alpha sig
 457,417,42,44,1,Alpha Phi,A Phi,alpha phi,a phi
 540,423,42,40,0,Zeta Psi,On Probation,zeta psi,on probation
@@ -34,7 +34,7 @@
 555,666,32,38,1,Delta Gamma,DG,delta gamma,dg
 618,647,29,38,1,Alpha Gamma Delta,AGD,alpha gamma delta,agd
 629,596,43,33,0,Tau Kappa Epsilon,TKE,tau kappa epsilon,tke
-621,485,44,33,0,Phi Delta Theta,Phi Delt,phi delta theta,phi delt
+621,485,44,33,0,Phi Delta Theta,Phi Delt,phi delta theta,phi delt,phi delta,Phi Delta
 654,429,18,25,0,Alpha Delta Phi,Alpha Delt,alpha delta phi,alpha delt,alpha delta,Alpha Delta
 674,408,31,42,0,Phi Kappa Psi,Phi Psi,phi kappa psi,phi psi
 714,600,28,35,0,Chi Psi,Chi Psi,chi psi,chi psi
